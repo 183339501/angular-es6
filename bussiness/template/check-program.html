@@ -1,0 +1,31 @@
+<div>
+    <h1 class="page-header">节目判断</h1>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>标题</th>
+                <th>ID</th>
+                <th>演员</th>
+                <th>导演</th>
+                <th>集数</th>
+                <th>年代</th>
+                <th>语言</th>
+                <th>简介</th>
+                <th>海报</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{check.program.title}}</td>
+                <td>{{check.program.sProgramId}}</td>
+                <td>{{check.program.actors|arrToString}}</td>
+                <td>{{check.program.directors|arrToString}}</td>
+                <td>{{check.program.currentEpisode}}</td>
+                <td>{{check.program.year}}</td>
+                <td>{{check.program.language}}</td>
+                <td style="width: 40%">{{check.program.intro}}</td>
+                <td><img ng-src="{{check.program.poster}}" height="120" width="120"/></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
