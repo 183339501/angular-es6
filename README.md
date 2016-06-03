@@ -1,10 +1,10 @@
 # angular-es6
 use angular es6 webpack build app
-``` bash
+```bash
 npm install 
 npm run dev
 ```
 ## 正式环境
-``` bash
+```bash
 npm run build
 ```
