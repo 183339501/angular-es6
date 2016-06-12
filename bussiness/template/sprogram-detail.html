@@ -1,0 +1,50 @@
+<div>
+    <h1 class="page-header">
+        节目判断
+        &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-primary" href="javascript:;" ng-click="sdetail.newItem()">这是新节目</a>
+        <a class="btn btn-primary" href="javascript:;" ng-click="sdetail.unresovle()">暂不处理</a>
+    </h1>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>标题</th>
+                <th>ID</th>
+                <th>演员</th>
+                <th>导演</th>
+                <th>集数</th>
+                <th>年代</th>
+                <th>语言</th>
+                <th>简介</th>
+                <th>海报</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{sdetail.program.title}}</td>
+                <td>{{sdetail.program.sProgramId}}</td>
+                <td>{{sdetail.program.actors|arrToString}}</td>
+                <td>{{sdetail.program.directors|arrToString}}</td>
+                <td>{{sdetail.program.currentEpisode}}</td>
+                <td>{{sdetail.program.year}}</td>
+                <td>{{sdetail.program.language}}</td>
+                <td style="width: 40%">{{sdetail.program.intro}}</td>
+                <td><img ng-src="{{sdetail.program.poster}}" height="120" width="120"/></td>
+            </tr>
+            <tr ng-if="sdetail.merge">
+                <td>
+                    {{sdetail.merge.title}}
+                    <!--<a class="btn btn-primary" href="merge_detail/{sdetail.program.sProgramId}/{sdetail.merge.mProgramId}">合并剧集到该节目</a>-->
+                </td>
+                <td>{{sdetail.merge.mProgramId}}</td>
+                <td>{{sdetail.merge.actors|arrToString}}</td>
+                <td>{{sdetail.merge.directors|arrToString}}</td>
+                <td>{{sdetail.merge.currentEpisode}}</td>
+                <td>{{sdetail.merge.year}}</td>
+                <td>{{sdetail.merge.language}}</td>
+                <td style="width: 40%">{{sdetail.merge.intro}}</td>
+                <td><img ng-src="{{sdetail.merge.poster}}" height="120" width="120"/></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

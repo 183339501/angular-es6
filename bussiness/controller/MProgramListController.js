@@ -1,23 +1,18 @@
 /**
  * Created by py on 2016/6/2.
  */
-export default class MediaListController {
-    constructor($scope,HttpService) {
+export default class MProgramListController {
+    constructor($scope,HttpService,$stateParams) {
         this.scope = $scope;
         this.currentPage = 1;
+        var category = $stateParams.category;
         this.query = {
-            sourceName:"",
-            merge :"",
-            status : "",
-            order : "updated_at",
-            sort : "-1",
             title : "",
-            pageNo : this.currentPage
+            category : category
         };
         this.httpService = HttpService;
-        var self = this;
-        this.scope.$watch("list.query",function(){
-            self.queryData();
+        this.scope.$watch("list.query",()=>{
+            this.queryData();
         },true)
     }
 
@@ -28,7 +23,7 @@ export default class MediaListController {
                 query[i] = this.query[i]
             }
         }
-        var promise = this.httpService.sendRequest("get","v1/sPrograms",query);
+        var promise = this.httpService.sendRequest("get","v1/mPrograms",query);
         promise.then(data =>{
             this.sum = data.sum;
             this.programList = data.data;
@@ -53,4 +48,5 @@ export default class MediaListController {
         this.queryData();
     }
 }
-MediaListController.$inject = ["$scope","HttpService"];
+
+MProgramListController.$inject = ["$scope","HttpService","$stateParams"];

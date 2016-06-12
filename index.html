@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>媒资管理</title>
-    <base href="/">
+    <base href="/?category=1">
 </head>
 <body>
 <div class="navbar navbar-inverse">
@@ -13,11 +13,56 @@
         </div>
     </div>
 </div>
-<div class="left">
+<div class="left"  id="accordion">
     <ul class="ztree">
-        <li><a href="/">媒资列表</a></li>
-        <li><a href="javascript:;">菜单一</a></li>
-        <li><a href="javascript:;">菜单二</a></li>
+        <li>
+            <i class="glyphicon glyphicon-chevron-up"></i>
+            <a  class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">电视剧 </a>
+            <ul id="collapseOne" class="accordion-body collapse">
+                <li><a href="/?category=1">新节目判断</a></li>
+                <li><a href="/mlist?category=1">编辑/合并节目</a></li>
+            </ul>
+        </li>
+        <li>
+            <i class="glyphicon glyphicon-chevron-up"></i>
+            <a  class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">电影</a>
+            <ul id="collapseTwo" class="accordion-body collapse">
+                <li><a href="/?category=2">新节目判断</a></li>
+                <li><a href="/mlist?category=2">编辑/合并节目</a></li>
+            </ul>
+        </li>
+        <li>
+            <i class="glyphicon glyphicon-chevron-up"></i>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">综艺</a>
+            <ul id="collapseThree" class="accordion-body collapse">
+                <li><a href="/?category=3">新节目判断</a></li>
+                <li><a href="/mlist?category=3">编辑/合并节目</a></li>
+            </ul>
+        </li>
+        <li>
+            <i class="glyphicon glyphicon-chevron-up"></i>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">动漫</a>
+            <ul id="collapseFour" class="accordion-body collapse">
+                <li><a href="/?category=4">新节目判断</a></li>
+                <li><a href="/mlist?category=4">编辑/合并节目</a></li>
+            </ul>
+        </li>
+        <li>
+            <i class="glyphicon glyphicon-chevron-up"></i>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">综艺</a>
+            <ul id="collapseFive" class="accordion-body collapse">
+                <li><a href="/?category=8">新节目判断</a></li>
+                <li><a href="/mlist?category=8">编辑/合并节目</a></li>
+            </ul>
+        </li>
+        <li>
+            <i class="glyphicon glyphicon-chevron-up"></i>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">电影预告</a>
+            <ul id="collapseSix" class="accordion-body collapse">
+                <li><a href="/?category=9">新节目判断</a></li>
+                <li><a href="/mlist?category=9">编辑/合并节目</a></li>
+            </ul>
+        </li>
     </ul>
 </div>
 <div style="height:100%;overflow:auto;">

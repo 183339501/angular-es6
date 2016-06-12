@@ -5,6 +5,6 @@ npm install
 npm run dev
 ```
 ## 正式环境
-``` bash
+```bash
 npm run build
 ```

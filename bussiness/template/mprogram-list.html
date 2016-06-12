@@ -1,0 +1,54 @@
+<div>
+    <h1 class="page-header">编辑/合并列表</h1>
+    <form class="form-inline" style="margin-bottom: 30px;">
+        <div class="form-group">
+            <input type="text" placeholder="输入标题关键字" ng-model="mprogram.query.title" class="form-control"/>
+        </div>
+    </form>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th ng-click="mprogram.sortTable('title')">
+                    节目名
+                    <i ng-if="mprogram.orderStyle=='title'" class="glyphicon {{mprogram.direction|orderClass}}"></i>
+                </th>
+                <th ng-click="mprogram.sortTable('rating')">
+                    评分
+                    <i ng-if="mprogram.orderStyle=='rating'" class="glyphicon {{mprogram.direction|orderClass}}"></i>
+                </th>
+                <th ng-click="mprogram.sortTable('updatedTime')">
+                    最大集数
+                    <i ng-if="mprogram.orderStyle=='updatedTime'" class="glyphicon {{mprogram.direction|orderClass}}"></i>
+                </th>
+                <th ng-click="mprogram.sortTable('updatedTime')">
+                    创建时间
+                    <i ng-if="mprogram.orderStyle=='updatedTime'" class="glyphicon {{mprogram.direction|orderClass}}"></i>
+                </th>
+                <th ng-click="mprogram.sortTable('updatedTime')">
+                    更新时间
+                    <i ng-if="mprogram.orderStyle=='updatedTime'" class="glyphicon {{mprogram.direction|orderClass}}"></i>
+                </th>
+                <th ng-click="mprogram.sortTable('status')">
+                    状态
+                    <i ng-if="mprogram.orderStyle=='status'" class="glyphicon {{mprogram.direction|orderClass}}"></i>
+                </th>
+                <th>
+                    操作
+                </th>
+            </tr>
+        </thead>
+        <!--body-->
+        <tbody>
+            <tr ng-repeat="l in mprogram.programList|orderBy:mprogram.orderStyle:mprogram.reverse">
+                <td><a href="mdetail/{{l.mProgramId}}">{{l.title}}</a></td>
+                <td>{{l.rating}}</td>
+                <td>{{l.maxEpisode}}</td>
+                <td>{{l.createTime|date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>{{l.updateTime|date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>{{l.status}}</td>
+                <td><a href="javascript:;">编辑</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <uib-pagination total-items="mprogram.sum" ng-model="mprogram.currentPage" max-size="10" items-per-page="10" class="pagination-sm" boundary-link-numbers="true" rotate="false" ng-change="mprogram.pageSelect()"></uib-pagination>
+</div>

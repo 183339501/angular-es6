@@ -10,12 +10,19 @@ class HttpService {
 
     sendRequest(method,url,params) {
         var def = this.q.defer();
-        this.http({
+        var config = {
             method:method,
             url:url,
-            data : params,
-            params : params
-        }).success(function (data) {
+            data : params
+        }
+        if(method ==="get"){
+            config = {
+                method:method,
+                url:url,
+                params : params
+            }
+        }
+        this.http(config).success(function (data) {
             def.resolve(data);
         }).error(function (e) {
             def.reject(e);

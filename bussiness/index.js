@@ -5,15 +5,19 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from "angular-ui-bootstrap";
 import routes from './routes';
-import MediaListController from './controller/MediaListController';
-import ProgramCheckController from "./controller/ProgramCheckController"
+import SProgramListController from './controller/SProgramListController';
+import SProgramDetailController from "./controller/SProgramDetailController";
+import MProgramListController from "./controller/MProgramListController";
+import MProgramDetailController from "./controller/MProgramDetailController";
 import HttpService from "./service/httpService";
 
 
 export default angular.module('app.program', [uiRouter,uiBootstrap,HttpService])
     .config(routes)
-    .controller('MediaListController', MediaListController)
-    .controller("ProgramCheckController",ProgramCheckController)
+    .controller('SProgramListController', SProgramListController)
+    .controller("SProgramDetailController",SProgramDetailController)
+    .controller("MProgramListController",MProgramListController)
+    .controller("MProgramDetailController",MProgramDetailController)
     .filter("arrToString",function (){
         return function (val) {
             return val?val.toString():"";

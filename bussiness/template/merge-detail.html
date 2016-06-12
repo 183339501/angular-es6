@@ -1,0 +1,199 @@
+<div>
+<div class="col-md-6">
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="title" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" placeholder="节目名" ng-model="merge.sProgram.title">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="director" class="col-sm-2 control-label">导演(英文逗号分隔)</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="director" placeholder="导演(英文逗号分隔)" ng-model="merge.sProgram.directors">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="actor" class="col-sm-2 control-label">主演(英文逗号分隔)</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="actor" placeholder="主演(英文逗号分隔)"  ng-model="merge.sProgram.actors">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="rating" class="col-sm-2 control-label">评分</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" id="rating" placeholder="主演(英文逗号分隔)"  ng-model="merge.sProgram.rating">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="year" class="col-sm-2 control-label">年份</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="year" placeholder="年份" ng-model="merge.sProgram.year">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="language" class="col-sm-2 control-label">语言</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="language" placeholder="语言" ng-model="merge.sProgram.language">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="area" class="col-sm-2 control-label">国家(英文逗号分隔)</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="area" placeholder="国家(英文逗号分隔)" ng-model="merge.sProgram.area">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="type" class="col-sm-2 control-label">类型(英文逗号分隔)</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="type" placeholder="类型(英文逗号分隔)" ng-model="merge.sProgram.type">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="maxEpisode" class="col-sm-2 control-label">最大集数</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="maxEpisode" placeholder="最大集数" ng-model="merge.sProgram.maxEpisode">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="tags" class="col-sm-2 control-label">自定义标签(英文逗号分隔)</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="tags" placeholder="自定义标签(英文逗号分隔)" ng-model="merge.sProgram.tags">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="intro" class="col-sm-2 control-label">简介</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" id="intro" ng-model="merge.sProgram.intro"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="poster" class="col-sm-2 control-label">海报</label>
+        <div class="col-sm-10">
+            <img ng-src="merge.sProgram.poster">
+            <input type="text" class="form-control" id="poster" placeholder="海报" ng-model="merge.sProgram.poster">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="definition" class="col-sm-2 control-label">清晰度</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="definition" placeholder="清晰度" ng-model="merge.sProgram.definition">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="sProgramId" class="col-sm-2 control-label">节目id</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="sProgramId" placeholder="节目id" ng-model="merge.sProgram.sProgramId">
+        </div>
+    </div>
+    <div class="form-group">
+        <label  class="col-sm-2 control-label">节目源</label>
+        <div class="col-sm-10">
+            <span>{{merge.sProgram.sProgramId}}</span>
+        </div>
+    </div>
+</form>
+</div>
+
+    <div class="col-md-6">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="mtitle" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mtitle" placeholder="节目名"  ng-model="merge.mProgram.title">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mdirector" class="col-sm-2 control-label">导演(英文逗号分隔)</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mdirector" placeholder="导演(英文逗号分隔)" ng-model="merge.mProgram.directors">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mactor" class="col-sm-2 control-label">主演(英文逗号分隔)</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mactor" placeholder="主演(英文逗号分隔)" ng-model="merge.mProgram.actors">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mrating" class="col-sm-2 control-label">评分</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="mrating" placeholder="主演(英文逗号分隔)" ng-model="merge.mProgram.rating">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="myear" class="col-sm-2 control-label">年份</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="myear" placeholder="年份" ng-model="merge.mProgram.year">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mlanguage" class="col-sm-2 control-label">语言</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mlanguage" placeholder="语言" ng-model="merge.mProgram.language">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="marea" class="col-sm-2 control-label">国家(英文逗号分隔)</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="marea" placeholder="国家(英文逗号分隔)" ng-model="merge.mProgram.area">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mtype" class="col-sm-2 control-label">类型(英文逗号分隔)</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mtype" placeholder="类型(英文逗号分隔)"  ng-model="merge.mProgram.type">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mmaxEpisode" class="col-sm-2 control-label">最大集数</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mmaxEpisode" placeholder="最大集数" ng-model="merge.mProgram.maxEpisode">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mtags" class="col-sm-2 control-label">自定义标签(英文逗号分隔)</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mtags" placeholder="自定义标签(英文逗号分隔)" ng-model="merge.mProgram.tags">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mintro" class="col-sm-2 control-label">简介</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="mintro" ng-model="merge.mProgram.intro"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mposter" class="col-sm-2 control-label">海报</label>
+                <div class="col-sm-10">
+                    <img src="https://www.google.com.hk/images/nav_logo242.png">
+                    <input type="text" class="form-control" id="mposter" placeholder="海报" ng-model="merge.mProgram.poster">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mdefinition" class="col-sm-2 control-label">清晰度</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mdefinition" placeholder="清晰度" ng-model="merge.mProgram.definition">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mmProgramId" class="col-sm-2 control-label">节目id</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mmProgramId" placeholder="节目id" ng-model="merge.mProgram.mProgramId">
+                </div>
+            </div>
+            <div class="form-group">
+                <label  class="col-sm-2 control-label">节目源</label>
+                <div class="col-sm-10">
+                    <span>{{merge.mProgram.sourceName}}</span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-primary" type="button" ng-click="submit">提交</button>
+        <a href="javascript:;" class="btn btn-default">返回</a>
+    </div>
+
+</div>

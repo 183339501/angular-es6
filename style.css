@@ -46,3 +46,15 @@ body {
     vertical-align: top;
     display: inline-block;
 }
+.accordion-body li{padding-top: 10px;
+padding-bottom: 10px;
+}
+.accordion-body li a:hover{
+    text-decoration: underline;
+}
+.clearfix:after{
+    clear: both;
+    display: table;
+    content: "";
+    overflow: hidden;
+}

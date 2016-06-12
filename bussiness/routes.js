@@ -5,16 +5,28 @@ routes.$inject = ['$stateProvider'];
 
 export default function routes($stateProvider) {
     $stateProvider
-        .state('list', {
-            url: '/',
-            template: require('./template/program-list.html'),
-            controller: 'MediaListController',
+        .state('slist', {
+            url: '/?category',
+            template: require('./template/sprogram-list.html'),
+            controller: 'SProgramListController',
             controllerAs: 'list'
         })
-        .state("check",{
-            url:"/check/:pid",
-            template:require("./template/check-program.html"),
-            controller:"ProgramCheckController",
-            controllerAs:"check"
+        .state("sdetail",{
+            url:"/sdetail/:pid",
+            template:require("./template/sprogram-detail.html"),
+            controller:"SProgramDetailController",
+            controllerAs:"sdetail"
+        })
+        .state("mlist",{
+            url:"/mlist?category",
+            template:require("./template/mprogram-list.html"),
+            controller:"MProgramListController",
+            controllerAs:"mprogram"
+        })
+        .state("mdetail",{
+            url:"/mdetail/:pid",
+            template:require("./template/mprogram-detail.html"),
+            controller:"MProgramDetailController",
+            controllerAs:"mdetail"
         })
 }
