@@ -17,6 +17,12 @@ export default function routes($stateProvider) {
             controller:"SProgramDetailController",
             controllerAs:"sdetail"
         })
+        .state("sedit",{
+            url:"/sedit/:pid",
+            template:require("./template/sprogram-edit.html"),
+            controller:"SProgramEditController",
+            controllerAs:"sedit"
+        })
         .state("mlist",{
             url:"/mlist?category",
             template:require("./template/mprogram-list.html"),

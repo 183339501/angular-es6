@@ -1,0 +1,160 @@
+<style>
+    .form-horizontal .form-group {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .space{
+        margin-left: 10px;;
+    }
+    .side-bar li{
+        height: 22px;
+        line-height: 21px;
+        margin: 4px 0 4px 5px;
+        padding-right: 9px;
+        border-radius: 2px;
+        border: 1px dotted #c40000;
+        padding-left: 9px;
+        /*color: #fff;*/
+        float: left;
+        list-style: none;
+    }
+    .side-bar{
+        padding-left: 0;
+    }
+    .form-control {
+        display: inline-block;
+        width: 25%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+</style>
+<div>
+    <h1 class="page-header">
+        节目详情
+    </h1>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">节目名</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="title" placeholder="节目名" ng-model="sedit.program.title">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="director" class="col-sm-2 control-label">导演</label>
+            <div class="col-sm-10">
+                <ul class="side-bar clearfix">
+                    <li ng-repeat="d in sedit.program.directors" class="item-border"><a href="javascript:;" title="{{d}}">{{d}}</a>&nbsp;<a style="color: red" href="javascript:;" ng-click="sedit.remove($index,'directors')">x</a></li>
+                </ul>
+                <div><input type="text" class="form-control" id="director" placeholder="导演(回车或点击按钮添加)" ng-model="sedit.program.directorsText" ng-keyup="sedit.enterAdd(sedit.program.directorsText,$event,'directors')">&nbsp;&nbsp;<a href="javascript:;" ng-click="sedit.btnAdd(sedit.program.directorsText,'directors')" class="btn btn-success">添加</a></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="actor" class="col-sm-2 control-label">主演</label>
+            <div class="col-sm-10">
+                <ul class="side-bar clearfix">
+                    <li ng-repeat="d in sedit.program.actors" class="item-border"><a href="javascript:;" title="{{d}}">{{d}}</a>&nbsp;<a style="color: red" href="javascript:;" ng-click="sedit.remove($index,'actors')">x</a></li>
+                </ul>
+                <div><input type="text" class="form-control" id="actor" placeholder="主演(回车或点击按钮添加)"  ng-model="sedit.program.actorsText" ng-keyup="sedit.enterAdd(sedit.program.directorsText,$event,'actors')">&nbsp;&nbsp;<a href="javascript:;" ng-click="sedit.btnAdd(sedit.program.directorsText,'actors')" class="btn btn-success">添加</a></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="rating" class="col-sm-2 control-label">评分</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="rating" placeholder="评分"  ng-model="sedit.program.rating">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="year" class="col-sm-2 control-label">年份</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="year" placeholder="年份" ng-model="sedit.program.year">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="language" class="col-sm-2 control-label">语言</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="language" placeholder="语言" ng-model="sedit.program.language">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="area" class="col-sm-2 control-label">国家</label>
+            <div class="col-sm-10">
+                <ul class="side-bar clearfix">
+                    <li ng-repeat="d in sedit.program.area" class="item-border"><a href="javascript:;" title="{{d}}">{{d}}</a>&nbsp;<a style="color: red" href="javascript:;" ng-click="sedit.remove($index,'area')">x</a></li>
+                </ul>
+                <div><input type="text" class="form-control" id="area" placeholder="国家(回车或点击按钮添加)" ng-model="sedit.program.areaText" ng-keyup="sedit.enterAdd(sedit.program.directorsText,$event,'area')">&nbsp;&nbsp;<a href="javascript:;" ng-click="sedit.btnAdd(sedit.program.directorsText,'area')" class="btn btn-success">添加</a></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="type" class="col-sm-2 control-label">类型</label>
+            <div class="col-sm-10">
+                <ul class="side-bar clearfix">
+                    <li ng-repeat="d in sedit.program.types" class="item-border"><a href="javascript:;" title="{{d}}">{{d}}</a>&nbsp;<a style="color: red" href="javascript:;" ng-click="sedit.remove($index,'area')">x</a></li>
+                </ul>
+                <div><input type="text" class="form-control" id="type" placeholder="类型(回车或点击按钮添加)" ng-model="sedit.program.typeText" ng-keyup="sedit.enterAdd(sedit.program.directorsText,$event,'area')">&nbsp;&nbsp;<a href="javascript:;" ng-click="sedit.btnAdd(sedit.program.directorsText,'area')" class="btn btn-success">添加</a></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="maxEpisode" class="col-sm-2 control-label">最大集数</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="maxEpisode" placeholder="最大集数" ng-model="sedit.program.maxEpisode">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="tags" class="col-sm-2 control-label">自定义标签</label>
+            <div class="col-sm-10">
+                <ul class="side-bar clearfix">
+                    <li ng-repeat="d in sedit.program.tags" class="item-border"><a href="javascript:;" title="{{d}}">{{d}}</a>&nbsp;<a style="color: red" href="javascript:;"  ng-click="sedit.remove($index,'area')">x</a></li>
+                </ul>
+                <div><input type="text" class="form-control" id="tags" placeholder="自定义标签(回车或点击按钮添加)" ng-model="sedit.program.tagsText" ng-keyup="sedit.enterAdd(sedit.program.directorsText,$event,'area')">&nbsp;&nbsp;<a href="javascript:;" ng-click="sedit.btnAdd(sedit.program.directorsText,'area')" class="btn btn-success" ng-click="sedit.clickAdd(sedit.program.directorsText,'area')">添加</a></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="intro" class="col-sm-2 control-label">简介</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="intro" ng-model="sedit.program.intro" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="poster" class="col-sm-2 control-label">海报</label>
+            <div class="col-sm-10">
+                <img ng-src="{{sedit.program.poster}}" style="width:300px;height: 300px;display: block">
+                <input type="text" class="form-control" id="poster" placeholder="海报" ng-model="sedit.program.poster">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="definition" class="col-sm-2 control-label">清晰度</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="definition" placeholder="清晰度" ng-model="sedit.program.definition">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mProgramId" class="col-sm-2 control-label">节目id</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="mProgramId" placeholder="节目id" ng-model="sedit.program.mProgramId" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="col-sm-2 control-label">剧集</label>
+            <div class="col-sm-10" style="margin-top:5px;">
+                <a  ng-repeat="p in sedit.program.episodes" href="{{p.source}}" target="_blank" class="space" title="{{p.title}}">{{p.index}}</a>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3 col-md-offset-2" style="margin-top:20px;">
+                <button type="button" class="btn btn-primary" ng-click="sedit.save($event)">保存</button>
+            </div>
+        </div>
+    </form>
+</div>

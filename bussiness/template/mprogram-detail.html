@@ -117,7 +117,7 @@
                 <ul class="side-bar clearfix">
                     <li ng-repeat="d in mdetail.program.tags" class="item-border"><a href="javascript:;" title="{{d}}">{{d}}</a>&nbsp;<a style="color: red" href="javascript:;"  ng-click="mdetail.remove($index,'area')">x</a></li>
                 </ul>
-                <div><input type="text" class="form-control" id="tags" placeholder="自定义标签(回车或点击按钮添加)" ng-model="mdetail.program.tagsText" ng-keyup="mdetail.enterAdd(mdetail.program.directorsText,$event,'area')">&nbsp;&nbsp;<a href="javascript:;" ng-click="mdetail.btnAdd(mdetail.program.directorsText,'area')"" class="btn btn-success" ng-click="mdetail.clickAdd(mdetail.program.directorsText,'area')">添加</a></div>
+                <div><input type="text" class="form-control" id="tags" placeholder="自定义标签(回车或点击按钮添加)" ng-model="mdetail.program.tagsText" ng-keyup="mdetail.enterAdd(mdetail.program.directorsText,$event,'area')">&nbsp;&nbsp;<a href="javascript:;" ng-click="mdetail.btnAdd(mdetail.program.directorsText,'area')" class="btn btn-success" ng-click="mdetail.clickAdd(mdetail.program.directorsText,'area')">添加</a></div>
             </div>
         </div>
         <div class="form-group">
@@ -148,7 +148,7 @@
         <div class="form-group" ng-repeat="p in mdetail.program.providers">
             <label  class="col-sm-2 control-label">节目源：<b>{{p.providerName}}</b>，清晰度：{{p.definition}}</label>
             <div class="col-sm-10" style="margin-top:5px;">
-                <a ng-repeat="e in p.episodes" href="{{e.source}}" target="_blank" class="space">{{e.index}}</a>
+                <a ng-repeat="e in p.episodes" href="{{e.source}}" target="_blank" class="space" title="{{e.title}}">{{e.index}}</a>
             </div>
         </div>
         <div class="form-group">

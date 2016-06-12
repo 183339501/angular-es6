@@ -9,6 +9,7 @@ import SProgramListController from './controller/SProgramListController';
 import SProgramDetailController from "./controller/SProgramDetailController";
 import MProgramListController from "./controller/MProgramListController";
 import MProgramDetailController from "./controller/MProgramDetailController";
+import SProgramEditController from "./controller/SProgramEditController"
 import HttpService from "./service/httpService";
 
 
@@ -18,6 +19,7 @@ export default angular.module('app.program', [uiRouter,uiBootstrap,HttpService])
     .controller("SProgramDetailController",SProgramDetailController)
     .controller("MProgramListController",MProgramListController)
     .controller("MProgramDetailController",MProgramDetailController)
+    .controller("SProgramEditController",SProgramEditController)
     .filter("arrToString",function (){
         return function (val) {
             return val?val.toString():"";
