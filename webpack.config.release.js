@@ -6,8 +6,6 @@ const webpack = require("webpack");
 const path = require("path");
 module.exports = {
     entry: [
-        "webpack-dev-server/client?http://0.0.0.0:3000",
-        "webpack/hot/only-dev-server",
         "./entry.js"
     ],
     output: {
@@ -20,7 +18,6 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery"
         }),
-        new webpack.HotModuleReplacementPlugin()
     ],
     module: {
         loaders: [
@@ -43,16 +40,5 @@ module.exports = {
                 loader: 'imports?jQuery=jquery'
             }
         ]
-    },
-    devServer: {
-        contentBase: __dirname,
-        port: 3000,
-        inline: true,
-        historyApiFallback: true,
-        stats: { colors: true },
-        hot: true,
-        proxy: {
-            '/v1/*': 'http://127.0.0.1:8080',
-        }
     }
 };
